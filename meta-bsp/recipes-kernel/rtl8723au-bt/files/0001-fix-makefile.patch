@@ -1,0 +1,32 @@
+From 27309dae21eb599e4e369c04c4cc3e0576c670e8 Mon Sep 17 00:00:00 2001
+From: Mans Rullgard <mans@mansr.com>
+Date: Thu, 26 Jan 2017 21:06:43 +0000
+Subject: [PATCH] fix makefile
+
+---
+ Makefile | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 12802f336cea..f38d49abbcf0 100644
+--- a/Makefile
++++ b/Makefile
+@@ -14,12 +14,12 @@ endif
+ 
+ ifneq ($(KERNELRELEASE),)
+ 
+-	obj-m := btusb.o btrtl.o btintel.o btbcm.o
++	obj-m := btusb.o btrtl.o
+ 
+ else
+ 	PWD := $(shell pwd)
+-	KVER := $(shell uname -r)
+-	KDIR := /lib/modules/$(KVER)/build
++	KVER := $(KERNEL_VERSION)
++	KDIR := $(KERNEL_PATH)
+ 
+ all:
+ 	$(MAKE) -C $(KDIR) M=$(PWD) modules
+-- 
+2.11.0
+
