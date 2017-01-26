@@ -39,8 +39,11 @@ RDEPENDS_${PN}_append_ccgxhf += "\
 "
 
 RDEPENDS_${PN}_append_beaglebone += "\
+	bluez5 \
+	bluez5-noinst-tools \
 	gpio-export \
 	i2c-tools \
+	linux-firmware-rtl8723b \
 	prodtest \
 	swupdate \
 	swupdate-scripts \
