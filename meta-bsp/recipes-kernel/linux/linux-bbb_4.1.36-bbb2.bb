@@ -26,3 +26,7 @@ B = "${WORKDIR}/linux-${PACKAGE_ARCH}-${LINUX_KERNEL_TYPE}-build"
 SRC_URI = "https://github.com/victronenergy/linux/archive/v${PV}.tar.gz"
 SRC_URI[md5sum] = "6e230232aa6815d3d3a61b5a08c0e69b"
 SRC_URI[sha256sum] = "82dd5950a7a8025e00bbb94bc2b4268f393254b3807399a3d491d88993224421"
+
+SRC_URI += " \
+	file://0001-bbb_defconfig-enable-bluetooth.patch \
+"
